@@ -32,7 +32,7 @@ Being able to quickly:
 - list my books by status, shelf, or rating.
 
 <h1 id="setting-up">Setting up ⚙️</h1>
-get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration`
+- get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration`
 
 ## Options
 - set the number of results when querying the Hardcover database (slightly slower if many). Default: 19.
