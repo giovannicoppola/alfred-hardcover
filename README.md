@@ -32,6 +32,7 @@ Being able to quickly:
 - list my books by status, shelf, or rating.
 
 <h1 id="setting-up">Setting up ⚙️</h1>
+
 - get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration`
 
 ## Options
@@ -40,6 +41,7 @@ Being able to quickly:
 
 <h1 id="usage">Basic Usage 📖</h1>
 The fundamental unit of the Workflow is a book result. Once you get to a list of books you can perform one of these operations:
+
 1. add or remove from shelves (`^ (ctrl)`)
 2. change reading status (`⌘ (cmd)`)
 3. open on Hardcover (`↩️ (enter)`)
@@ -74,6 +76,7 @@ None known for now, but if you see anything, let me know.
 
 <h1 id="roadmap">Roadmap 🛣️</h1>
 I don't think I will use any of these below, but if others are interested these are some of the possible next steps:
+
 1. set reading progress
 2. being able to search by shelf membership (e.g. `Lincoln` in `Biographies`)
 
