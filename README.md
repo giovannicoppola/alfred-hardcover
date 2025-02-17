@@ -1,5 +1,5 @@
 # alfred-hardcover 📘
-### An Alfred workflow to interact with [Hardcover](https://hardcover.app/), a modern book tracking and community of book lovers.  
+### An Alfred workflow to interact with [Hardcover](https://hardcover.app/), a modern book tracking app and community of book lovers.  
 
 
 <a href="https://github.com/giovannicoppola/alfred-hardcover/releases/latest/">
