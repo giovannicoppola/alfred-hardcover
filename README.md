@@ -25,6 +25,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-hardcover/to
 
 
 <h1 id="motivation">Motivation ✅</h1>
+
 Being able to quickly:
 - add a book to my library
 - check my library for the status, rating, and shelves of a book, and change them
@@ -84,7 +85,7 @@ I don't think I will use any of these below, but if others are interested these 
 
 - the Hardcover Discord community
 - chatGPT and DeepSeek 
-- Icones from www.flaticon.com
+- Icons from www.flaticon.com
     - https://www.flaticon.com/free-icon/books_1258297?
     - https://www.flaticon.com/free-icon/star_465589
     - https://www.flaticon.com/free-icon/book_3330314
