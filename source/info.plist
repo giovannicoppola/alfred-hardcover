@@ -1853,7 +1853,7 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>9</string>
+				<string>19</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
