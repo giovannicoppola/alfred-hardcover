@@ -1895,7 +1895,7 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/giovannicoppola/alfred-hardcover</string>
 </dict>
