@@ -73,6 +73,7 @@ That's it! Let me know if anything does not work, or if you'd like to add featur
 None known for now, but if you see anything, let me know. 
 
 <h1 id="changelog">Changelog 🧰</h1>
+- 2026-08-09 v0.1.3, code review — "open list on Hardcover" now links to *your* profile instead of a hardcoded account; removed a broken list link on the reading-status items; searches containing a `"` no longer break the query; cleared personal hotkeys from the shipped workflow
 - 2025-02-17 First release (v0.1)
 
 <h1 id="roadmap">Roadmap 🛣️</h1>

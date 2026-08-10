@@ -12,7 +12,13 @@ import (
 const apiRoot = "https://api.hardcover.app/v1/graphql"
 
 const baseURL = "https://hardcover.app/books/"
-const listURL = "https://hardcover.app/@giovanni/lists/"
+
+// listURLFor builds the Hardcover lists URL for the logged-in user. `username` is
+// populated from the API in parseUserID; previously this was hardcoded to a single
+// account, so every user's list links pointed at that author's profile.
+func listURLFor(slug string) string {
+	return fmt.Sprintf("https://hardcover.app/@%s/lists/%s", username, slug)
+}
 
 // Get the system temporary directory
 var tempDir = os.TempDir()

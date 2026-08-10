@@ -209,10 +209,16 @@ func filterSearchQuery(query string) string {
 func queryRemoteDatabase(searchString string) []BookSearch {
 	startTime := time.Now()
 
-	// Define the corrected GraphQL query, replacing "james monroe" with searchString
-	query := fmt.Sprintf(`{search(query: "%s", query_type: "Book", per_page: %d, page: 1) {
-		results  
-		  }}`, searchString, numberResults)
+	// Encode the search term as a JSON string so it is safely quoted/escaped inside
+	// the GraphQL query (a raw `"` in a title would otherwise break the query).
+	encodedSearch, err := json.Marshal(searchString)
+	if err != nil {
+		LogF("Error encoding search string:", err)
+		return []BookSearch{}
+	}
+	query := fmt.Sprintf(`{search(query: %s, query_type: "Book", per_page: %d, page: 1) {
+		results
+		  }}`, string(encodedSearch), numberResults)
 
 	// Build the request payload
 	requestBody := GraphQLRequest{

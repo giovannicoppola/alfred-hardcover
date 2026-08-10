@@ -171,11 +171,6 @@ func fetchServeStatus() ([]byte, error) {
 				},
 				"mods": map[string]interface{}{
 
-					"cmd": map[string]interface{}{
-						"valid":    true,
-						"arg":      "listURL + slug",
-						"subtitle": "️open list on Hardcover",
-					},
 					"cmd+alt": map[string]interface{}{
 						"subtitle": backString,
 						"valid":    true,

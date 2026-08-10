@@ -156,7 +156,7 @@ func fetchServeShelves() ([]byte, error) {
 				},
 				"ctrl": map[string]interface{}{
 					"valid":    true,
-					"arg":      listURL + slug,
+					"arg":      listURLFor(slug),
 					"subtitle": "️open list on Hardcover",
 				},
 				"cmd+alt": map[string]interface{}{
