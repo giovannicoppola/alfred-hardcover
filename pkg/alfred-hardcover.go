@@ -68,6 +68,10 @@ func main() {
 		{
 			changeBookStatus()
 		}
+	case "-stats":
+		{
+			showStats()
+		}
 	}
 
 }

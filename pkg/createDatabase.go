@@ -262,6 +262,14 @@ func createLibraryDatabase() ([]byte, error) {
 		LogF("Error decoding library JSON response: %v", err)
 		return nil, err
 	}
+	// The tables below are dropped and recreated, so never rebuild from an
+	// empty answer: that is what a failed lookup (user ID 0, a bad token) looks
+	// like, and it would wipe a perfectly good local library.
+	if len(APILibrary.Data.UserBooks) == 0 {
+		err = fmt.Errorf("Hardcover returned no books for user %d; keeping the existing database", userID)
+		LogF("%v", err)
+		return nil, err
+	}
 
 	// 2. get the books on shelves (including those with no reading status)
 	query = fmt.Sprintf(`query {

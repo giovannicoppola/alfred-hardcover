@@ -47,6 +47,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>21320212-74B6-4362-BB26-F5876B1B0364</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>46443B1E-B384-436B-8C96-A1DDF4CC095C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>33576834-74A3-4898-A328-D7FAFFCACA63</key>
 		<array>
 			<dict>
@@ -54,6 +67,42 @@
 				<string>59A5A739-6703-4ABA-BF68-A44CED709FCC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>40AD3669-299D-48F7-9828-E956D8B07223</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6EE4E1CF-A6DF-475D-9191-2F036014E7F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>46443B1E-B384-436B-8C96-A1DDF4CC095C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>40AD3669-299D-48F7-9828-E956D8B07223</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B059EBFC-5081-4F70-BA3E-A90E6C133C0A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -1470,6 +1519,111 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputfile</key>
+				<string>stats.sh</string>
+				<key>inputtype</key>
+				<integer>1</integer>
+				<key>loadingtext</key>
+				<string>turning the pages… ⏳</string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>46443B1E-B384-436B-8C96-A1DDF4CC095C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>6EE4E1CF-A6DF-475D-9191-2F036014E7F3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:statsReportPath}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>40AD3669-299D-48F7-9828-E956D8B07223</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:statsReportMarkdown}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B059EBFC-5081-4F70-BA3E-A90E6C133C0A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>!hstats</string>
+				<key>subtext</key>
+				<string>status, books per year, ratings vs the crowd, authors, shelves</string>
+				<key>text</key>
+				<string>Hardcover reading stats 📊</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>21320212-74B6-4362-BB26-F5876B1B0364</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># alfred-hardcover 📘
@@ -1485,7 +1639,7 @@ Being able to quickly:
 - list my books by status, shelf, or rating.
 
 # Setting up ⚙️
-- get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration`
+- get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration` (either format works: the newer `hc_…` key, or an older token that starts with `Bearer `)
 
 # Options 
 - set the number of results when querying the Hardcover database (slightly slower if many). Default: 19
@@ -1517,6 +1671,7 @@ In the library and database search you can use sort flags to sort your results:
 A couple of other things:
 - In most visualizations, `⌘-⌥`(command-option) will move back to the previous visualization
 - `::hardcover-refresh` will force database refresh 
+- `!hstats` shows your reading stats: status, books finished per year and month, your ratings against the Hardcover community, most-read authors, shelves. ↩ opens a fuller HTML report, ⌘↩ copies the summary
 
 That's it! If you notice a bug, or have ideas for new features, please feel free to get in touch either on [Github](https://github.com/giovannicoppola/alfred-hardcover), on the [Alfred](https://www.alfredforum.com) forum, or the Hardcover Discord.</string>
 	<key>uidata</key>
@@ -1553,6 +1708,15 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 			<key>ypos</key>
 			<real>385</real>
 		</dict>
+		<key>21320212-74B6-4362-BB26-F5876B1B0364</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>490</real>
+			<key>ypos</key>
+			<real>1180</real>
+		</dict>
 		<key>257D3667-EA44-4518-A31C-BA0BF0DF6F58</key>
 		<dict>
 			<key>colorindex</key>
@@ -1588,6 +1752,25 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 			<real>1720</real>
 			<key>ypos</key>
 			<real>1025</real>
+		</dict>
+		<key>40AD3669-299D-48F7-9828-E956D8B07223</key>
+		<dict>
+			<key>xpos</key>
+			<real>940</real>
+			<key>ypos</key>
+			<real>1180</real>
+		</dict>
+		<key>46443B1E-B384-436B-8C96-A1DDF4CC095C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>reading stats report
+↩ open HTML · ⌘↩ copy Markdown</string>
+			<key>xpos</key>
+			<real>720</real>
+			<key>ypos</key>
+			<real>1180</real>
 		</dict>
 		<key>4D57E671-668E-4CEE-83FC-829A5CA48F4D</key>
 		<dict>
@@ -1642,6 +1825,13 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 			<real>1580</real>
 			<key>ypos</key>
 			<real>580</real>
+		</dict>
+		<key>6EE4E1CF-A6DF-475D-9191-2F036014E7F3</key>
+		<dict>
+			<key>xpos</key>
+			<real>1140</real>
+			<key>ypos</key>
+			<real>1180</real>
 		</dict>
 		<key>6F593E91-6611-4B0C-80C3-56F98C00F054</key>
 		<dict>
@@ -1716,6 +1906,13 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 			<real>395</real>
 			<key>ypos</key>
 			<real>45</real>
+		</dict>
+		<key>B059EBFC-5081-4F70-BA3E-A90E6C133C0A</key>
+		<dict>
+			<key>xpos</key>
+			<real>940</real>
+			<key>ypos</key>
+			<real>1300</real>
 		</dict>
 		<key>B0CF518D-796F-4F86-A0C6-F5C06DC14BAC</key>
 		<dict>
@@ -1895,7 +2092,7 @@ That's it! If you notice a bug, or have ideas for new features, please feel free
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1.3</string>
+	<string>0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/giovannicoppola/alfred-hardcover</string>
 </dict>

@@ -77,6 +77,21 @@ func interrogateAPI(myQuery string) ([]byte, error) {
 	elapsedTime := time.Since(startTime)
 	LogF("Execution time (interrogateAPI): %d ms", elapsedTime.Milliseconds())
 
+	// A rejected token comes back as a body like {"error": "invalid_token", ...}.
+	// It must be an error: treated as data it was saved as the user ID file and
+	// parsed as an empty library, which then replaced the local database.
+	var authErr struct {
+		Error       string `json:"error"`
+		Description string `json:"error_description"`
+	}
+	if resp.StatusCode == http.StatusUnauthorized || resp.StatusCode == http.StatusForbidden ||
+		(json.Unmarshal(body, &authErr) == nil && authErr.Error != "") {
+		err = fmt.Errorf("Hardcover API rejected the request (HTTP %d): %s %s — check the API token in Workflow Configuration",
+			resp.StatusCode, authErr.Error, authErr.Description)
+		fmt.Fprintln(os.Stderr, err)
+		return nil, err
+	}
+
 	return body, nil
 }
 

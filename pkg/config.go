@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -169,10 +170,15 @@ func init() {
 	}
 
 	// Get API token
-	authToken = os.Getenv("HARDCOVER_API_TOKEN")
+	authToken = strings.TrimSpace(os.Getenv("HARDCOVER_API_TOKEN"))
 	if authToken == "" {
 		LogF("Please set the HARDCOVER_API_TOKEN environment variable.")
 		return
+	}
+	// The API wants "Bearer <token>". Older tokens were copied from the account
+	// page with the prefix; the newer hc_… keys are shown without it. Accept both.
+	if !strings.HasPrefix(authToken, "Bearer ") {
+		authToken = "Bearer " + authToken
 	}
 
 	// Get and create data folder
@@ -203,7 +209,9 @@ func init() {
 
 	_, err = isBeyondToday()
 	if err != nil {
-		fmt.Println("Error:", err)
+		// stderr, not stdout: anything printed before the Script Filter JSON
+		// makes Alfred reject the whole response
+		LogF("Error: %v", err)
 		return
 	}
 

@@ -34,7 +34,7 @@ Being able to quickly:
 
 <h1 id="setting-up">Setting up ⚙️</h1>
 
-- get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration`
+- get your API key [here](https://hardcover.app/account/api), and paste it into the `Hardcover API token` field in `Workflow Configuration` (either format works: the newer `hc_…` key, or an older token that starts with `Bearer `)
 
 ## Options
 - set the number of results when querying the Hardcover database (slightly slower if many). Default: 19.
@@ -62,6 +62,8 @@ In the library and database search you can use sort flags to sort your results:
 - `--r`: by rating (highest first)
 - `--t`: by title (alphabetical)
 
+Reading stats: `!hstats` opens a **📊 summary** in Alfred's text view: reading status, books finished per year and month, your ratings against the Hardcover community, most-read authors, shelves, and when the books you read were written. From there, ↩ opens a fuller HTML report (your five-star books and the whole library, filterable, linked to Hardcover) and ⌘↩ copies the summary as Markdown.
+
 A couple of other things:
 - In most visualizations, `⌘-⌥`(command-option) will move back to the previous visualization
 - `::hardcover-refresh` will force database refresh 
@@ -73,6 +75,7 @@ That's it! Let me know if anything does not work, or if you'd like to add featur
 None known for now, but if you see anything, let me know. 
 
 <h1 id="changelog">Changelog 🧰</h1>
+- 2026-10-22 v0.2 — reading stats (`!hstats`) with an HTML report; works with Hardcover's new `hc_…` API keys; a rejected token no longer breaks every keyword or empties the local library
 - 2026-08-09 v0.1.3, code review — "open list on Hardcover" now links to *your* profile instead of a hardcoded account; removed a broken list link on the reading-status items; searches containing a `"` no longer break the query; cleared personal hotkeys from the shipped workflow
 - 2025-02-17 First release (v0.1)
 
